@@ -3,14 +3,15 @@
 
 Visor angular con un iframe apuntando al servicio kibana/ElasticSearch.
 
+Muestra el dashboard de dicho Kibana, el cual contiene los datos de las distintas capas
 
-### Preparacion proyecto:
+- Latencia 
+- Velocidad de bajada
+- Velocidad de subidad
+- Intensidad de la conexion
 
-- Instalar tanto Node.js como Npm en su version mas reciente.
-- Correr el comando "ng serve" en la ruta raiz del proyecto
 
-### Tests
-- Usar el comando "ng test" en la ruta raiz del proyecto
+# Contacto:
 
-### Despliegue
-- Usar el commando "ng build" el cual generará un desplegable en la carpeta /dist
+- amartinezvil@ext.aragon.es
+- 955087700
