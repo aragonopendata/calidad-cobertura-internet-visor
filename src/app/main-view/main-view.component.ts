@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppconfigService } from '../services/appconfig.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-view',
@@ -17,8 +19,16 @@ export class MainViewComponent implements OnInit {
   ];
   selectedFiltro="todos";
   selectedEstado="Bajada";
-  constructor() { }
-  ngOnInit(): void {
+  iframeUrlSaniticed:any=null;
+  constructor(private appConfig:AppconfigService ,public sanitizer:DomSanitizer) { 
+
+  }
+  async ngOnInit() {
+    await this.appConfig.loadConfig().toPromise().then((res:any)=>{
+      console.log("CONFIG",res);
+      this.iframeUrlSaniticed=this.sanitizer.bypassSecurityTrustResourceUrl(res.urlIframe); 
+
+    })
   }
 
 }

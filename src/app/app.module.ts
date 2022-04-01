@@ -9,6 +9,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
+import { AppconfigService } from './services/appconfig.service';
+import { HttpClientModule  } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import {ButtonModule} from 'primeng/button';
     FormsModule,
     DropdownModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AppconfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
