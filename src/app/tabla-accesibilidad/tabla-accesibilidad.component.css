@@ -1,0 +1,260 @@
+.input-container {
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.input-container .control {
+    width: 40%;
+}
+
+.input-container .button {
+    width: 19%;
+}
+
+.input-container label {
+    font-size: 1.3em;
+}
+
+.button-container {
+    float:right;
+}
+.table-container {
+    width: 100%;
+}
+.container {
+    font-weight: 500;
+    color: black;
+}
+
+.lblAviso {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: black;
+}
+
+:host ::ng-deep .p-button {
+    background-color: black !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+:host ::ng-deep .p-dropdown {
+    border: 1px solid black !important;
+}
+
+:host ::ng-deep .p-dropdown-item {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1em;
+}
+
+:host ::ng-deep .p-dropdown .p-element {
+    color: black !important;
+    font-weight: 500 !important;
+    height: 42px !important;
+}
+
+:host ::ng-deep .p-multiselect {
+    border: 1px solid black !important;
+}
+
+:host ::ng-deep .p-multiselect .p-element {
+    color: black !important;
+    font-weight: 500 !important;
+    height: 42px !important;
+}
+
+:host ::ng-deep .p-multiselect-item {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1em;
+}
+
+:host ::ng-deep .p-multiselect-filter {
+    border-color: black !important;
+}
+
+:host ::ng-deep .p-multiselect-filter-icon {
+    color: black !important;
+}
+
+:host ::ng-deep .p-multiselect-close {
+    background: transparent !important;
+}
+
+:host ::ng-deep .p-multiselect-close-icon{
+    color: black !important;
+}
+
+:host ::ng-deep .p-inputtext{
+    box-shadow: none !important;
+}
+
+:host ::ng-deep .p-checkbox-box {
+    border-color:black !important;
+}
+
+:host ::ng-deep .mat-header-cell {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1.4em !important;
+}
+
+:host ::ng-deep .mat-sort-header-content {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1.5em !important;
+}
+
+:host ::ng-deep .mat-sort-header-arrow {
+    font-weight: 900;
+    color: black !important;
+}
+
+:host ::ng-deep .mat-row {
+    border-color: black !important;
+}
+
+:host ::ng-deep .mat-header-row {
+    border-color: black !important;
+}
+
+:host ::ng-deep .mat-paginator-page-size-label {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1.5em !important;
+}
+
+:host ::ng-deep .mat-select-value {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1.5em !important;
+}
+
+:host ::ng-deep .mat-paginator-range-label {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1.5em !important;
+}
+
+:host ::ng-deep .mat-paginator-icon {
+    color: black !important;
+}
+
+:host ::ng-deep .mat-option-text {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1.2em !important;
+}
+
+:host ::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight {
+    background: white !important;
+}
+
+:host ::ng-deep .p-checkbox .p-checkbox-box .p-checkbox-icon {
+    color: black !important;
+    font-weight: 900 !important;
+}
+
+:host ::ng-deep .p-button-label {
+    font-size: 1.1em !important;
+}
+
+:host ::ng-deep p-button button {
+    margin-top: 28px !important;
+}
+
+:host ::ng-deep .p-paginator-last {
+    color: black !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+:host ::ng-deep .p-paginator-first {
+    color: black !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+:host ::ng-deep.p-paginator-prev {
+    color: black !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+:host ::ng-deep .p-paginator-next {
+    color: black !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+:host ::ng-deep .mat-progress-spinner circle{
+    stroke: black !important;
+}
+
+:host ::ng-deep .mat-spinner circle {
+    stroke: black !important;
+}
+
+:host ::ng-deep .dropdownMunicipios cdk-virtual-scroll-viewport {
+    height: 320px !important;
+}
+
+:host ::ng-deep .p-placeholder {
+    font-weight: 500 !important;    
+    color: black !important;
+}
+
+/**:host ::ng-deep mat-table {
+    height: 600px !important;
+    overflow: auto;
+}**/
+
+/**quitar buscar de multiselect**/
+:host ::ng-deep .p-multiselect-header {
+    display: none !important;
+}
+
+/**ocultar selector elementos por pagina**/
+
+:host ::ng-deep .p-paginator-rpp-options {
+    display: none !important;
+}
+
+
+@media (max-width:960px) {
+    .input-container div {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width:500px) {
+    :host ::ng-deep .mat-option-text {
+        font-size: 0.8em !important;
+    }    
+    :host ::ng-deep .mat-header-cell {
+        font-size: 1em !important;
+    }
+    :host ::ng-deep .mat-sort-header-content {
+        font-size: 0.8em !important;
+    }
+    :host ::ng-deep .mat-paginator-page-size-label {
+        font-size: 0.8em !important;
+    }
+
+    :host ::ng-deep .mat-select-value {
+        font-size: 0.8em !important;
+    }
+    :host ::ng-deep .mat-paginator-range-label {
+        font-size: 0.8em !important;
+    }
+    :host ::ng-deep mat-row mat-cell {
+        font-size: 0.8em !important;
+    }
+    :host ::ng-deep p-paginator {
+        zoom:80% !important;
+    }
+}

@@ -1,0 +1,75 @@
+
+<div class="container">
+    <span class="lblAviso"> Los campos con (*) son obligatorios.</span>
+    <div class="input-container">
+        <div class="control">
+            <label for="municipio" class="block">Municipio *</label>
+            <p-dropdown [autoDisplayFirst]="false" placeholder="Seleccione una opción" aria-required id="municipio" [options]="municipios" [(ngModel)]="selectedMunicipio" optionLabel="name"
+                styleClass="dropdownAragon dropdownMunicipios" panelStyleClass="dropdownAragon" [style]="{'width':'85%', 'min-height': '44px', 'max-width': '350px', 'margin-top':'10px'}">
+            </p-dropdown>
+            <!--<p-multiSelect [virtualScroll]="true" [itemSize]="6" [options]="municipios" [(ngModel)]="selectedMunicipio" optionLabel="name" styleClass="dropdownAragon dropdownMunicipios" panelStyleClass="dropdownAragon" [style]="{'width':'85%', 'max-width': '350px'}"></p-multiSelect>-->
+            <!--<p-button icon="pi pi-times" (click)="limpiarCampos('municipio')" label="" [style]="{'width':'30px', 'height':'30px', 'margin-left': '6px', 'margin-bottom': '6px'}"></p-button>-->
+        </div>
+        <div class="control">
+            <label for="categoria" class="block">Tipo de conexión *</label>
+            <p-dropdown aria-required id="categoria" [options]="categorias" [(ngModel)]="selectedCategoria" optionLabel="name"
+                styleClass="dropdownAragon" panelStyleClass="dropdownAragon" [style]="{'width':'85%', 'min-height': '44px', 'max-width': '350px', 'margin-top': '10px'}">
+            </p-dropdown>
+            <!--<p-button icon="pi pi-times" (click)="limpiarCampos('categoria')" label="" [style]="{'width':'30px', 'height':'30px', 'margin-left': '6px', 'margin-bottom': '6px'}"></p-button>-->
+        </div>
+        <div class="button">
+        <!--<div class="button-container">-->
+            <!--<button mat-mini-fab color="primary" aria-label="Botón buscar" (click)="buscar(null, null)" style="background-color: black !important;">
+                   <mat-icon>search</mat-icon>
+            </button>-->
+            <p-button id="buscar" icon="pi pi-search" (click)="buscar($event, null, null)" label="Buscar"></p-button>
+        </div>
+        <!--<div style="min-width: 300px;">
+            <label for="calidad" class="block">Calidad de conexión</label>
+            &nbsp;
+            <p-multiSelect [virtualScroll]="true" [itemSize]="4" [options]="calidades" [(ngModel)]="selectedCalidad" optionLabel="name" styleClass="dropdownAragon" panelStyleClass="dropdownAragon" [style]="{'width':'85%', 'max-width': '350px'}"></p-multiSelect>
+            <p-button icon="pi pi-times" (click)="limpiarCampos('calidad')" label="" [style]="{'width':'30px', 'height':'30px', 'margin-left': '6px', 'margin-bottom': '6px'}"></p-button>
+        </div>-->
+    </div>
+    <br>
+    <br>
+    <!--<div *ngIf="esMapa != 'true'" class="table-container">-->
+    <div class="table-container">
+        <!--<mat-table [dataSource]="documentos" matSort (matSortChange)="buscar(null, null, $event)">-->
+        <mat-table [dataSource]="documentos">
+            <ng-container matColumnDef="Fecha">
+                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </mat-header-cell>-->
+                <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Fecha}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Municipio">
+                <mat-header-cell *matHeaderCellDef> Municipio </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Municipio}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Categoria">
+                <mat-header-cell *matHeaderCellDef> Tipo de conexión </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Categoria}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Calidad">
+                <mat-header-cell *matHeaderCellDef> Calidad de conexión </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Calidad}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Velocidad__Bajada">
+                <mat-header-cell *matHeaderCellDef> Velocidad de bajada </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Velocidad__Bajada}} </mat-cell>
+            </ng-container>
+        
+            <!-- Header and Row Declarations -->
+            <mat-header-row *matHeaderRowDef="['Fecha', 'Municipio', 'Categoria', 'Calidad', 'Velocidad__Bajada']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['Fecha', 'Municipio', 'Categoria', 'Calidad', 'Velocidad__Bajada']"></mat-row>
+        </mat-table>
+        <!--<mat-paginator [length]="totalDocumentos" [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons aria-label="Paginador" (page)="buscar($event, null)">
+        </mat-paginator>-->
+        <p-paginator #pag currentPageReportTemplate="{currentPage} de {totalPages}" [rows]="pageSize" [totalRecords]="totalDocumentos" [rowsPerPageOptions]="[50]" (onPageChange)="buscar(null, $event, null)" [showJumpToPageDropdown]="true" [showPageLinks]="false"></p-paginator>
+    </div>
+    <!--<div *ngIf="esMapa == 'true'" class="iframe-container"><iframe #iframe id="iframe" alt="" border="0" bordercolor="#000000" frameborder="0" height="0" hspace="0" [src]="obtenerURLIframe()" style="display:block; width:100%; height:960px;"></iframe></div>-->
+</div>
