@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Municipios } from 'src/model/municipios';
 import { Observable } from 'rxjs';
@@ -31,6 +31,7 @@ export class TablaAccesibilidadComponent implements OnInit {
 
   sortActive = '';
   sortDirection = '';
+  token = '';
   municipios: any[] = Municipios.listadoMunicipios;
 
   categorias= [
@@ -230,8 +231,13 @@ export class TablaAccesibilidadComponent implements OnInit {
           paginator: paginatorOptions*/
         };
   
-        this.http.post<any>(this.url + 'api/obtenerReportesAccesibilidad', body).subscribe(oResult => {
-          this.totalDocumentos = oResult.total;
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json').set('Accept', 'application/json').set('Authorization', 'Bearer ' + this.token);
+		
+        this.http.post<any>(this.url + 'api/obtenerReportesAccesibilidad', body,  { headers: headers }).subscribe(sResult => {
+          let oResult = JSON.parse(sResult);
+          
+		  this.totalDocumentos = oResult.total;
           //this.paginatorOptions = oResult.paginator;
           this.documentos = oResult.documents;
           this.spinner.style.display = 'none';  
