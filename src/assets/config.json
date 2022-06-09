@@ -1,9 +1,9 @@
 {
     "api": {
-        "url": "http://localhost:5000/",
-        "urlDESAragón": "https://desopendataei2a.aragon.es/cobertura/api/"
+        "url": "",
+        "token": ""
     },
     "mapa": {
-        "url": "https://desopendataei2a.aragon.es/cobertura/kibana/dash_cobertura/"
+        "url": ""
     }
 }
