@@ -1,0 +1,11 @@
+{
+  "name": "bot_twitter_cobertura",
+  "version": "1.0.0",
+  "description": "Twitter Bot Datos Cobertura",
+  "main": "main.js",
+  "author": "",
+  "dependencies": {
+    "https": "^1.0.0",
+    "twit": "^2.2.11"
+  }
+}
